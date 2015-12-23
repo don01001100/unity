@@ -1,0 +1,689 @@
+﻿@import 'style.scss';
+
+
+.bottom-footer {
+    text-align: center;
+}
+
+.widget-reference {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.note {
+    font-size: .9em;
+    font-style: italic;
+}
+
+.note-minor {
+    color: #666;
+}
+
+.error-details {
+    color: #666;
+    font-size: .9em;
+    font-style: italic;
+}
+
+.file-picker-activator {
+    cursor: pointer !important;
+}
+
+/**
+ * Miniature navigation at the top of the page.
+ */
+.top-nav {
+    @extend .container;
+
+    font-size: 11px;
+
+    @mixin left-nav {
+        float: left;
+        margin-top: 5px;
+        padding-top: 10px;
+    }
+
+    @mixin right-nav {
+        float: right;
+        margin-top: 10px;
+        padding-top: 5px;
+    }
+            
+    ul {
+        margin: 0px;
+        padding: 0px 0px 0px 0px;
+                    
+        color: #900;
+        display: inline;
+        list-style-type: none;
+        z-index: 150;
+
+        li {
+            padding: 0px 0px 0px 0px;
+            z-index: 150;
+            display: inline;
+                    
+            color: #900;
+            text-align: left;
+            font-weight: bold;
+
+            margin-left: 7px;
+            margin-right: 7px;
+        }
+    }
+
+    @media (min-width: 600px) {
+        .logged-in-as {
+            @include left-nav;
+        }
+
+        .logged-log-in-out {
+            @include left-nav;
+        }
+
+        .home-link {
+            @include right-nav;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .logged-in-as {
+            @include left-nav;
+        }
+
+        .logged-log-in-out {
+            @include right-nav;
+        }
+
+        .home-link {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    }
+}
+
+.main-content-container {
+    position: relative;
+    
+    $floating-navigation-width: 150px;
+    $floating-navigation-margin-top: 20px;
+
+    .floating-navigation {
+        position: absolute;
+        left: -$floating-navigation-width;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    ul.nav-tabs {
+        width: $floating-navigation-width;
+        margin-top: $floating-navigation-margin-top;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+        
+        li {
+            margin: 0;
+            border-top: 1px solid #ddd;
+            
+            a {
+                margin: 0;
+                padding: 8px 16px;
+                border-radius: 0;
+            }
+        }
+
+        li:first-child {
+            border-top: none;
+            a {
+                border-radius: 4px 4px 0 0;
+            }
+        }
+
+        li.active {
+            a, a:hover{
+                color: #fff;
+                background: #a00;
+                border: 1px solid #a00;
+            }
+        }
+
+        li:last-child {
+            a {
+                border-radius: 0 0 4px 4px;
+            }
+        }
+    }
+
+    ul.nav-tabs.affix {
+        top: 0px; /* Set the top position of pinned element */
+    }
+}
+
+.modal-dialog {
+    .modal-body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+/**
+ * Footer
+ */
+.site-addr-info {
+    .site-addr::after {
+        content: "  |  ";
+    }
+
+    .site-addr:last-child::after {
+        content: "";
+    }
+}
+
+/**
+ * The dialog box to allow users to log back in.
+ */
+.login-iframe-dialog {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 3% !important;
+
+    .modal-dialog {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    
+        .modal-content {
+            width: 100%;
+            height: 100%;
+
+            .modal-body {
+                width: 100%;
+                height: 100%;
+            
+                .bootbox-body {
+                    width: 100%;
+                    height: 100%;
+
+                    #LogInAgainIFrameDialog {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000 !important;
+    font-weight: bold;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+label.error {
+        font-size: .9em;
+        font-style: italic;
+        color: #ff0000 !important;
+    }
+
+label.error:empty{
+        /* Important because the validator code sets the style attribute to display: block. */
+        display: none !important;
+    }
+
+.input-validation-error
+{
+    border: 1px solid #ff0000 !important;
+    background-color: #ffeeee !important;
+}
+
+.validation-summary-errors
+{
+    background-color: #EEDDDD!important;
+    border: 1px solid #BB0000!important;
+    color: #FF0000 !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:10px;
+    padding: 5px;
+    text-align: center;
+    width: 75%;
+}
+
+.validation-summary-errors ul li
+{
+    list-style-type: none;
+    margin: 2px 0 2px 0;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+
+
+
+
+.publication-search-verify-combination-contributors {
+    clear: both;
+	margin-left: 5%;
+    width: 90%;
+    margin-top: 10px;
+
+    .publications-contributors-label {
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 1440px) {    
+    .container {
+        margin-left: 150px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+    .container {
+        width: 83.33333%;
+    }
+}
+
+.asf { color: red; }
+.publication-apa-citation {
+    font-weight: normal;
+    
+    .article-title, .book-title, .secondary-title {
+            font-style: italic;
+        }
+}
+
+form.profile-modal-form {
+
+    .btn {
+        font-size: 16px;
+    }
+    
+    label {
+        display:block;
+    }
+
+    %label-error {
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    $profile-modal-form-margin: 5%;
+    $profile-modal-form-element-margin-top: 1em;
+    
+    input {
+        margin: 0;
+    }
+
+    @for $i from 0 to 11 {
+        $width: $i * 25px + 50px;
+        .profile-modal-form__prefix-label-#{$i * 25 + 50} {
+            display: block;
+            margin-left: $profile-modal-form-margin;
+            margin-top: $profile-modal-form-element-margin-top;
+
+            label {
+                > span:nth-child(1) {
+                    display: inline-block;
+                    width: $i * 25 + 50px;
+                    text-align: left;
+                }
+
+                label.error {
+                    @extend %label-error;
+                    margin-left: $i * 25 + 50px;
+                }
+
+                %normal-borderless {
+                    width: -moz-calc(90% - (#{$width}));
+                    width: -webkit-calc(90% - (#{$width}));
+                    width: calc(90% - (#{$width}));
+                    font-weight: normal;
+                    display: inline;
+                }
+
+                %normal {
+                    @extend %normal-borderless;
+                    border: 1px solid #DBDBDB;
+                    margin: 0;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    padding-top: 3px;
+                    padding-bottom: 3px;
+                    font-size: inherit;
+                }
+
+                $inputTypes: text, number, file;
+
+                .profile-modal-form__static-text {
+                    @extend %normal-borderless;
+                    border: 1px solid transparent;
+                    display: inline-block;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    padding-top: 3px;
+                    padding-bottom: 3px;
+                }
+
+                @each $inputType in $inputTypes {
+
+                    input[type=#{$inputType}] {
+                        @extend .form-control;
+                        @extend %normal;
+                    }
+
+                    input[type=#{$inputType}].profile-modal-form__prefix-label__tiny {
+                        width: 6em;
+                        max-width: -moz-calc(90% - (#{$width}));
+                        max-width: -webkit-calc(90% - (#{$width}));
+                        max-width: calc(90% - (#{$width}));
+                    }
+
+                    input[type=#{$inputType}].profile-modal-form__prefix-label__small {
+                        width: 8em;
+                        max-width: -moz-calc(90% - (#{$width}));
+                        max-width: -webkit-calc(90% - (#{$width}));
+                        max-width: calc(90% - (#{$width}));
+                    }
+
+                    input[type=#{$inputType}].profile-modal-form__prefix-label__half {
+                        width: 50%;
+                        max-width: -moz-calc(50% - (#{$width}));
+                        max-width: -webkit-calc(50% - (#{$width}));
+                        max-width: calc(50% - (#{$width}));
+                    }
+                
+                    input[type=#{$inputType}].tt-input, input[type=#{$inputType}].tt-hint {
+                        width: 100%;
+                        /* This ugly !important is necessary because Twiter Typeahead adds
+                         * some inline CSS. 
+                         */
+                        vertical-align: inherit !important;
+                    }
+                }
+
+                button.find-person-button {
+                    margin-top: 1px;
+                    height: 30px;
+                    margin-left: -41px;
+                    width: 41px;
+                }
+
+                select {
+                    @extend %normal;
+                    padding-left: 1px;
+                    padding-top: 2px;
+                    @extend .form-control;
+                }
+
+                select.profile-modal-form__prefix-label__tiny {
+                    width: 6em;
+                    max-width: -moz-calc(90% - (#{$width}));
+                    max-width: -webkit-calc(90% - (#{$width}));
+                    max-width: calc(90% - (#{$width}));
+                }
+
+                select.profile-modal-form__prefix-label__small {
+                    width: 8em;
+                    max-width: -moz-calc(90% - (#{$width}));
+                    max-width: -webkit-calc(90% - (#{$width}));
+                    max-width: calc(90% - (#{$width}));
+                }
+
+                select.profile-modal-form__prefix-label__half {
+                    width: 50%;
+                    max-width: -moz-calc(50% - (#{$width}));
+                    max-width: -webkit-calc(50% - (#{$width}));
+                    max-width: calc(50% - (#{$width}));
+                }
+
+                .twitter-typeahead {
+                    @extend %normal-borderless;
+                }
+
+                .twitter-typeahead.profile-modal-form__prefix-label__tiny {
+                    width: 6em;
+                    max-width: -moz-calc(90% - (#{$width}));
+                    max-width: -webkit-calc(90% - (#{$width}));
+                    max-width: calc(90% - (#{$width}));
+                }
+
+                .twitter-typeahead.profile-modal-form__prefix-label__small {
+                    width: 8em;
+                    max-width: -moz-calc(90% - (#{$width}));
+                    max-width: -webkit-calc(90% - (#{$width}));
+                    max-width: calc(90% - (#{$width}));
+                }
+
+                .twitter-typeahead.profile-modal-form__prefix-label__half {
+                    width: 50%;
+                    max-width: -moz-calc(50% - (#{$width}));
+                    max-width: -webkit-calc(50% - (#{$width}));
+                    max-width: calc(50% - (#{$width}));
+                }
+
+                textarea {
+                    @extend %normal;
+                    @extend .form-control;
+                    height: 4em;
+                    vertical-align: text-top;
+                    margin-top: -5px;
+                }
+
+                textarea.profile-modal-form__prefix-label__tiny {
+                    width: 6em;
+                    max-width: -moz-calc(90% - (#{$width}));
+                    max-width: -webkit-calc(90% - (#{$width}));
+                    max-width: calc(90% - (#{$width}));
+                }
+
+                textarea.profile-modal-form__prefix-label__small {
+                    width: 8em;
+                    max-width: -moz-calc(90% - (#{$width}));
+                    max-width: -webkit-calc(90% - (#{$width}));
+                    max-width: calc(90% - (#{$width}));
+                }
+
+                textarea.profile-modal-form__prefix-label__half {
+                    width: 50%;
+                    max-width: -moz-calc(50% - (#{$width}));
+                    max-width: -webkit-calc(50% - (#{$width}));
+                    max-width: calc(50% - (#{$width}));
+                }
+
+                .input-group {
+                    @extend %normal-borderless;
+                    padding-left: 1px;
+                    display: inline-table;
+                    font-style: normal;
+                    
+                    input {
+                        width: 100%;
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                        &.form-control {
+                            /* Override some bootstrap stuff that gets in the way. */
+                            float: none;
+                        }
+                    }
+
+                    .input-group-btn > .btn {
+                        border-top-left-radius: 0;
+                        border-bottom-left-radius: 0;
+                    }
+                }
+
+                .input-group.profile-modal-form__prefix-label__tiny {
+                    width: 6em;
+                    max-width: -moz-calc(90% - (#{$width}));
+                    max-width: -webkit-calc(90% - (#{$width}));
+                    max-width: calc(90% - (#{$width}));
+                }
+
+                .input-group.profile-modal-form__prefix-label__small {
+                    width: 8em;
+                    max-width: -moz-calc(90% - (#{$width}));
+                    max-width: -webkit-calc(90% - (#{$width}));
+                    max-width: calc(90% - (#{$width}));
+                }
+
+                .input-group.profile-modal-form__prefix-label__half {
+                    width: 50%;
+                    max-width: -moz-calc(50% - (#{$width}));
+                    max-width: -webkit-calc(50% - (#{$width}));
+                    max-width: calc(50% - (#{$width}));
+                }
+            }
+
+            span.profile-modal-form__note {
+                margin-left: $width;
+                font-size: 0.85em;
+                font-style: italic;
+                display:block;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .profile-modal-form__sub-section {
+        display: block;
+        width: -moz-calc(100% - (#{$profile-modal-form-margin}));
+        width: -webkit-calc(100% - (#{$profile-modal-form-margin}));
+        width: calc(100% - (#{$profile-modal-form-margin}));
+        margin-left: $profile-modal-form-margin;
+
+            label {
+                span {
+                    font-weight: normal;
+                    font-style: italic;
+                }
+            }   
+    }
+
+    ul.profile-modal-form__radio-list {
+        
+        $profile-modal-form-radio-backmargin: 5%;
+
+        li {
+            margin-left: $profile-modal-form-radio-backmargin;
+            margin-top: $profile-modal-form-element-margin-top;
+            position: relative;
+
+            label {
+                font-size: 14px;
+
+                input[type=radio], input[type=checkbox] {
+                    position: absolute;
+                    width: $profile-modal-form-margin + $profile-modal-form-radio-backmargin;
+                    height: $profile-modal-form-element-margin-top;
+                    top: -1px;
+                    margin: 4px;
+                }
+
+                > span {
+                    margin-left: $profile-modal-form-margin + $profile-modal-form-radio-backmargin;
+                    display: block;
+                    width: 100% - 2 * ($profile-modal-form-margin + $profile-modal-form-radio-backmargin);
+                }
+            }
+
+            span.profile-modal-form__note {
+                margin-left: $profile-modal-form-margin + $profile-modal-form-radio-backmargin;
+                font-size: 0.85em;
+                font-style: italic;
+                display: block;
+            }
+        }
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *                                 Typeahead                                 *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.typeahead,
+.tt-query,
+.tt-hint {
+  padding: 8px 12px;
+  line-height: 30px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  outline: none;
+}
+
+.typeahead {
+  background-color: #fff;
+}
+
+.typeahead:focus {
+  border: 2px solid #0097cf;
+}
+
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: #999;
+}
+
+.tt-menu {
+  width: 422px;
+  margin: -12px 0 12px 0;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  line-height: 1.25em;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #0097cf;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}

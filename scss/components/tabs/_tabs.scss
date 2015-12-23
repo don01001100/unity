@@ -35,28 +35,7 @@
                 &:hover, &:focus {
                     background-color: transparent;
                     border: 0 none;
-                    height: 3.125em; /* 50/16 */
                 }
-            }
-            :after {
-                border-bottom: 0.6875em solid #FFFCF5; /* 11/16 */
-                border-left: 0.6875em solid transparent; /* 11/16 */
-                border-right: 0.6875em solid transparent; /* 11/16 */
-                content: "";
-                display: inline-block;
-                position: absolute;
-                right: 40%;
-                bottom: -0.0625em; /* 1/16 */
-            }
-            :before {
-                border-bottom: 0.6875em solid #F1EAE0; /* 11/16 */
-                border-left: 0.6875em solid transparent; /* 11/16 */
-                border-right: 0.6875em solid transparent; /* 11/16 */
-                content: "";
-                display: inline-block;
-                position: absolute;
-                right: 40%;
-                bottom: 0.0625em; /* 1/16 */
             }
         }
     }
